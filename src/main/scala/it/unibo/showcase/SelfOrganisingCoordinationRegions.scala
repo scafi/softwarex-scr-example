@@ -9,10 +9,11 @@ import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.configuration.{
 }
 import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.world.ScafiWorldInitializer.Random
 import it.unibo.scafi.simulation.s2.frontend.view.scalaFX.drawer.ViewEffect
+import it.unibo.scafi.space.graphics2D.BasicShape2D.Circle
 import it.unibo.scafi.space.{Point2D, Point3D}
 import it.unibo.showcase.SelfOrganisingCoordinationRegions._
 class SelfOrganisingCoordinationRegions extends AggregateProgram with BuildingBlocks with StandardSensors {
-  override def main: Any = {
+  override def main(): Any = {
     val radius = 300 // average area of interest
     val leader = S(radius, nbrRange) // select leader that will collect information about distributed zone
     val potential = distanceTo(leader) // create a potential field to collect information in the leader
@@ -47,7 +48,7 @@ object SelfOrganisingCoordinationRegionsMain extends App {
     SimulationInfo(program = classOf[SelfOrganisingCoordinationRegions]),
     RadiusSimulation(radius = 100),
     neighbourRender = true,
-    scafiWorldInfo = ScafiWorldInformation(),
+    scafiWorldInfo = ScafiWorldInformation(shape = Some(Circle(4))),
     outputPolicy = ViewEffect(baseTemperature, maxAmplitude),
     performance = FastPolicy
   ).launch()

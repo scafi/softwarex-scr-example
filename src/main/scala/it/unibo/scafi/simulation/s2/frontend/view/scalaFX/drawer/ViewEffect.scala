@@ -40,9 +40,9 @@ object ViewEffect {
     def draw(shape: Circle, color: Color): Unit = {
       shape.fill = color
       shape.stroke = Color.BLACK
-      shape.strokeWidth = 2
-      shape.radius = 20
-      shape.setViewOrder(-1.0)
+      shape.strokeWidth = strokeSize
+      shape.radius = radius
+      shape.setViewOrder(viewOrder)
     }
   }
 }
