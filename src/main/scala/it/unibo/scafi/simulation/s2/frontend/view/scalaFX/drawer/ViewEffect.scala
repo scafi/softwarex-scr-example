@@ -9,7 +9,7 @@ import scalafx.Includes._
 
 case class ViewEffect(baseTemperature: Int, deltaTemperature: Double, startingHue: Int = 300) extends FXOutputPolicy {
   private val leaderEffect = NodeEffect(strokeSize = 2, radius = 20, viewOrder = -1)
-  private val slaveEffect = NodeEffect(strokeSize = 1, radius = 7, viewOrder = -1)
+  private val slaveEffect = NodeEffect(strokeSize = 1, radius = 7, viewOrder = 0)
   override type OUTPUT_NODE = javafx.scene.shape.Shape
   override def nodeGraphicsNode(node: NODE): OUTPUT_NODE =
     modelShapeToFXShape(node.shape, node.position)
