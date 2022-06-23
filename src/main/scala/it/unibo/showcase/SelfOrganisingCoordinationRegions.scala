@@ -8,6 +8,7 @@ import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.configuration.{
   ScafiWorldInformation
 }
 import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.world.ScafiWorldInitializer.Random
+import it.unibo.scafi.simulation.s2.frontend.view.{ViewSetting, WindowConfiguration}
 import it.unibo.scafi.simulation.s2.frontend.view.scalaFX.drawer.ViewEffect
 import it.unibo.scafi.space.graphics2D.BasicShape2D.Circle
 import it.unibo.scafi.space.{Point2D, Point3D}
@@ -42,6 +43,7 @@ object SelfOrganisingCoordinationRegions {
 }
 object SelfOrganisingCoordinationRegionsMain extends App {
   private val nodes = 1000
+  ViewSetting.windowConfiguration = WindowConfiguration()
   // Main used to start the simulation, using scalafx simulator
   ScafiProgramBuilder(
     Random(nodes, maxWidth, maxHeight),
