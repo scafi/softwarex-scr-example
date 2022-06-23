@@ -11,7 +11,7 @@ To run the simulation, you can type:
 sbt run
 ```
 
-This produce the following result:
+This produces the following result:
 
 ![Simulation GIF](./assets/simulation.gif)
 
